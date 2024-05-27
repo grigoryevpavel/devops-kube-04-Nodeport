@@ -13,13 +13,16 @@
 3. Создаем и запускаем тестовый под с образом multitool, который автоматически удалится по завершении(флаг --rm):
   ```kubectl run multitool --image wbitt/network-multitool -ti --rm -- /bin/sh```
 4. Проверяем доступность приложений изнутри кластера командами внутри namespace *test*:
-  > curl nginx-multitool:9001
-  > curl nginx-multitool:9002 
+  > curl nginx-multitool:9001 \
+  > curl nginx-multitool:9002
+
   <img src='images/testpod_in_namespace.png'/>
+
 5. Проверяем доступность приложений изнутри кластера командами снаружи namespace *test*:
-  > curl nginx-multitool.test.svc:9001
+  > curl nginx-multitool.test.svc:9001 \
   > curl nginx-multitool.test.svc:9002
-  <img src='images/testpod_out_namespace.png'/>
+
+<img src='images/testpod_out_namespace.png'/>
 
 ------
 
